@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Random Course (No Glossary)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.7; }
+    .nav a { margin-right: 12px; }
+    .top { padding: 12px 14px; background:#f6f6f6; border:1px solid #ddd; border-radius:10px; }
+    #readingArea { margin-top: 16px; padding: 16px; border: 1px solid #eee; border-radius: 12px; }
+    #dictPopup{
+      position:absolute; max-width:380px; background:#111; color:#fff;
+      padding:12px; border-radius:12px; box-shadow:0 10px 28px rgba(0,0,0,0.28);
+      z-index:9999; display:none; font-size:14px;
+    }
+    #dictPopup .word{ font-weight:bold; font-size:15px; margin-bottom:6px; }
+    #dictPopup .meta{ opacity:0.85; font-size:12px; margin-bottom:8px; }
+    #dictPopup .closeRow{ display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
+    #closeBtn{ cursor:pointer; border:0; background:transparent; color:#fff; font-size:18px; opacity:0.85; }
+    #closeBtn:hover{ opacity:1; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="./index.html">MBA Accounting and Finance</a>
+    <a href="./other.html"><b>Other Course (same words, no popup)</b></a>
+  </div>
+
+  <div class="top">
+    <h2 style="margin:0;">Postgraduate Certificate in Marketing Management</h2>
+    <div>Module: <b>Marketing Fundamentals</b> | Lesson: <b>U1C1L1</b></div>
+    <div style="margin-top:6px;">
+      Same words exist below, but this course/module is not mapped in glossary.json — so nothing should pop up.
+    </div>
+  </div>
+
+  <div id="readingArea">
+    <p>
+      Accounting and Financial Transactions may be referenced in business discussions, and Profit or Loss can impact decisions.
+      Assets and Liabilities also appear in reports such as Financial Statements like the Balance Sheet, Income Statement,
+      and Cash Flow Statement. Liquidity, Working Capital, Budget, and Financial Performance may be discussed at a high level.
+    </p>
+  </div>
+
+  <!-- Popup HTML exists but will never show because mapping won't load -->
+  <div id="dictPopup" role="dialog" aria-live="polite">
+    <div class="closeRow">
+      <div class="word" id="popupWord"></div>
+      <button id="closeBtn" aria-label="Close">×</button>
+    </div>
+    <div class="meta" id="popupMeta"></div>
+    <div id="popupBody"></div>
+  </div>
+
+  <script>
+    // Different course/module => no match in glossary.json => popup will never appear
+    window.GLOSSARY_CONTEXT = {
+      courseName: "Postgraduate Certificate in Marketing Management",
+      moduleName: "Marketing Fundamentals",
+      lessonId: "U1C1L1",
+      glossaryUrl: "./glossary.json"
+    };
+  </script>
+  <script src="./glossary.js"></script>
+</body>
+</html>

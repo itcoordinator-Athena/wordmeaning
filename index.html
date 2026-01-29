@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBA Accounting and Finance</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.7; }
+    .nav a { margin-right: 12px; }
+    .top { padding: 12px 14px; background:#f6f6f6; border:1px solid #ddd; border-radius:10px; }
+    #readingArea { margin-top: 16px; padding: 16px; border: 1px solid #eee; border-radius: 12px; }
+    #dictPopup{
+      position:absolute; max-width:380px; background:#111; color:#fff;
+      padding:12px; border-radius:12px; box-shadow:0 10px 28px rgba(0,0,0,0.28);
+      z-index:9999; display:none; font-size:14px;
+    }
+    #dictPopup .word{ font-weight:bold; font-size:15px; margin-bottom:6px; }
+    #dictPopup .meta{ opacity:0.85; font-size:12px; margin-bottom:8px; }
+    #dictPopup .closeRow{ display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
+    #closeBtn{ cursor:pointer; border:0; background:transparent; color:#fff; font-size:18px; opacity:0.85; }
+    #closeBtn:hover{ opacity:1; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="./index.html"><b>MBA Accounting and Finance</b></a>
+    <a href="./other.html">Other Course (same words, no popup)</a>
+  </div>
+
+  <div class="top">
+    <h2 style="margin:0;">MBA Accounting and Finance</h2>
+    <div>Module: <b>Finance for Business Leaders</b> | Lesson: <b>U1C1L1</b></div>
+    <div style="margin-top:6px;">Select a defined term (e.g., <i>Accounting</i>, <i>Financial Transactions</i>, <i>Balance Sheet</i>). Popup will show meaning.</div>
+  </div>
+
+  <div id="readingArea">
+    <p>
+      Accounting starts with recording Financial Transactions through Bookkeeping.
+      Profit or Loss depends on income and expenses, while Assets and Liabilities reflect Financial Position.
+      Financial Statements such as the Balance Sheet, Income Statement, and Cash Flow Statement help evaluate Liquidity,
+      Working Capital, and Financial Performance. Strong Cash Flow Management supports Statutory Compliance and better Budget decisions.
+    </p>
+  </div>
+
+  <div id="dictPopup" role="dialog" aria-live="polite">
+    <div class="closeRow">
+      <div class="word" id="popupWord"></div>
+      <button id="closeBtn" aria-label="Close">×</button>
+    </div>
+    <div class="meta" id="popupMeta"></div>
+    <div id="popupBody"></div>
+  </div>
+
+  <script>
+    // LMS-like context for this page
+    window.GLOSSARY_CONTEXT = {
+      courseName: "MBA Accounting and Finance",
+      moduleName: "Finance for Business Leaders",
+      lessonId: "U1C1L1",
+      glossaryUrl: "./glossary.json"
+    };
+  </script>
+  <script src="./glossary.js"></script>
+</body>
+</html>

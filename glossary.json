@@ -1,0 +1,93 @@
+{
+  "moduleId": "Finance for Business Leaders",
+  "lessons": {
+    "U1C1L1": {
+      "title": "Glossary of Accounting Terms",
+      "terms": {
+        "Accounting": "A systematic process of identifying, recording, classifying, analyzing, and communicating financial information of a business.",
+        "Financial Transactions": "Business activities involving money that can be measured and recorded, such as sales, purchases, payments, and receipts.",
+        "Bookkeeping": "The process of recording financial transactions in a systematic manner in accounting books.",
+        "Profit": "The excess of income over expenses during a specific accounting period.",
+        "Loss": "The excess of expenses over income during a specific accounting period.",
+        "Assets": "Resources owned by a business that have economic value, such as cash, inventory, buildings, and machinery.",
+        "Liabilities": "Obligations or debts of a business payable to outsiders, such as loans, creditors, and outstanding expenses.",
+        "Financial Position": "The overall economic condition of a business at a particular point in time, shown through assets and liabilities.",
+        "Financial Statements": "Structured reports presenting financial information, such as the Balance Sheet, Income Statement, and Cash Flow Statement.",
+        "Balance Sheet": "A financial statement that shows the assets, liabilities, and capital of a business on a specific date.",
+        "Income Statement": "A financial statement that shows revenues, expenses, and profit or loss for a specific accounting period.",
+        "Cash Flow Statement": "A statement showing inflows and outflows of cash during a particular period.",
+        "Liquidity": "The ability of a business to meet its short-term financial obligations.",
+        "Current Ratio": "A liquidity ratio that measures the firm’s ability to pay short-term liabilities using current assets.",
+        "Quick Ratio": "A liquidity ratio that measures the ability to meet immediate liabilities without relying on inventory.",
+        "Working Capital": "The excess of current assets over current liabilities, indicating short-term financial health.",
+        "Cash Flow Management": "The process of planning and controlling cash inflows and outflows to maintain liquidity.",
+        "Statutory Compliance": "Adherence to legal and regulatory accounting requirements prescribed by law.",
+        "Budget": "A financial plan estimating future income and expenditure for a specific period.",
+        "Financial Performance": "A measure of how effectively a business uses its resources to generate profit."
+      }
+    },
+    "U1C1L2": {
+      "title": "Financial Accounting",
+      "terms": {
+        "Financial Accounting": "A branch of accounting concerned with recording, summarizing, and reporting financial transactions of a business using standardized rules.",
+        "Financial Transactions": "Monetary business activities that affect the financial position of an enterprise and are recorded in accounting books.",
+        "Standardized Guidelines": "Uniform rules and principles used for preparing financial reports to ensure consistency and comparability.",
+        "Procurement of Funds": "The process of raising finance for business operations through various sources.",
+        "Capital Structure": "The mix of debt and equity used by a firm to finance its operations.",
+        "Capital Budgeting": "The process of evaluating and selecting long-term investment projects.",
+        "Working Capital": "Funds required for the day-to-day operations of a business.",
+        "Dividend Distribution": "Payment of profits to shareholders from the earnings of the company.",
+        "Accounting Standards": "Authoritative rules that govern accounting practices and financial reporting.",
+        "GAAP (Generally Accepted Accounting Principles)": "A set of commonly accepted accounting principles and procedures used in financial reporting.",
+        "IFRS (International Financial Reporting Standards)": "International accounting standards issued to bring uniformity in financial reporting across countries.",
+        "Double-Entry Bookkeeping": "A system of accounting where every transaction affects at least two accounts with equal debit and credit entries.",
+        "Accrual Basis of Accounting": "A method of accounting where income and expenses are recorded when they are earned or incurred, not when cash is received or paid.",
+        "Cash Basis of Accounting": "A method of accounting in which transactions are recorded only when cash is received or paid.",
+        "Revenue Recognition": "The accounting principle that determines when income should be recorded.",
+        "Financial Statements": "Formal records presenting the financial performance and position of a business.",
+        "Balance Sheet": "A statement showing the assets, liabilities, and equity of a business at a specific date.",
+        "Income Statement": "A statement showing revenues, expenses, and profit or loss for a period.",
+        "Cash Flow Statement": "A statement showing cash inflows and outflows during a period.",
+        "Statement of Changes in Equity": "A statement showing changes in owners’ equity over an accounting period.",
+        "Notes to Accounts": "Explanatory notes that provide additional information to financial statements.",
+        "Financial Reporting": "The process of communicating financial information to users of financial statements.",
+        "Stakeholders": "Individuals or groups having an interest in the business, such as owners, employees, and creditors.",
+        "Capital Structure Decision": "Decision relating to the proportion of debt and equity used in financing the business.",
+        "Investment Decision": "Decision regarding allocation of funds to various assets or projects.",
+        "Cash Management": "Planning and controlling cash flows to maintain adequate liquidity.",
+        "Tax Obligations": "Legal responsibility of a business to pay taxes to the government.",
+        "Fund Flow Analysis": "Analysis of changes in financial position between two balance sheet dates.",
+        "Ratio Analysis": "A technique used to evaluate financial performance using ratios derived from financial statements."
+      }
+    },
+    "U1C1L3": {
+      "title": "Management Accounting",
+      "terms": {
+        "Management Accounting": "A branch of accounting concerned with providing accounting information to management for planning, control, and decision-making.",
+        "Cost Accounting": "The process of recording, classifying, and analyzing costs to ascertain the cost of products or services.",
+        "Income and Expenditure": "Income refers to earnings of a business, while expenditure refers to costs incurred in earning that income.",
+        "Periodical Statements and Reports": "Regular internal reports prepared for management to evaluate performance and control costs.",
+        "Cost Ascertainment": "The process of determining the actual cost of products, services, or operations.",
+        "Cost Control": "The practice of regulating costs through comparison of actual costs with standard or budgeted costs.",
+        "Corrective Action": "Steps taken by management to eliminate deviations between actual performance and planned performance.",
+        "Informational Needs of Management": "The requirement of relevant, timely, and detailed information to support managerial decisions.",
+        "Policy Formulation": "The process of setting long-term guidelines and strategies for business operations.",
+        "Planning and Control": "Planning involves setting objectives and deciding actions in advance, while control ensures activities follow the planned course.",
+        "Alternative Business Actions": "Different possible courses of action available to management for decision-making.",
+        "Performance Evaluation": "Assessment of efficiency and effectiveness of operations using accounting information.",
+        "Selling Price": "The price at which goods or services are sold to customers.",
+        "Profit-making Basis": "Operating principle where revenue must exceed costs to earn profit.",
+        "Decision Making": "The process of selecting the best course of action among available alternatives.",
+        "Budgeting": "The process of preparing detailed financial plans for future operations.",
+        "Budget Performance": "The estimated results as per the budget used for comparison with actual performance.",
+        "Planning": "Determining objectives and formulating strategies to achieve them.",
+        "Strategic Management": "The formulation and implementation of long-term goals and policies of an organization.",
+        "Problem Identification": "The process of recognizing operational or financial issues that require managerial attention.",
+        "Cost Reduction": "A planned and permanent reduction in unit cost without affecting quality.",
+        "Efficiency Measurement": "Evaluation of how effectively resources are utilized to achieve output.",
+        "Pricing": "Fixing the selling price of products or services based on cost and market conditions.",
+        "Curtailment of Loss": "Measures taken to minimize losses during unfavorable business periods such as offseason."
+      }
+    }
+  }
+}

@@ -65,7 +65,15 @@
         <div class="brand"><span class="dot"></span> Word Meaning Prototype</div>
         <div class="crumb">Dashboard / Course Home / Essential Readings</div>
       </div>
-      <!-- <button class="cta" type="button">Connect Personal Tutor</button> -->
+     <div style="display:flex; gap:10px; align-items:center;">
+  <select id="courseSwitcher" aria-label="Switch course"
+    style="padding:10px 12px; border-radius:12px; border:1px solid #e5e7eb; background:#fff; font-weight:800;">
+    <option value="index.html">MBA Accounting &amp; Finance</option>
+    <option value="other.html" selected>Postgraduate Certificate (No Glossary)</option>
+  </select>
+  <button class="cta" type="button">Connect Personal Tutor</button>
+</div>
+
     </div>
   </header>
 
@@ -124,5 +132,15 @@
     };
   </script>
   <script src="./glossary.js"></script>
+  <script>
+  // Course switcher redirect
+  const cs = document.getElementById("courseSwitcher");
+  if (cs) {
+    cs.addEventListener("change", () => {
+      window.location.href = "./" + cs.value;
+    });
+  }
+</script>
+
 </body>
 </html>

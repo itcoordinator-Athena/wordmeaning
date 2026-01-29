@@ -3,56 +3,329 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MBA Accounting and Finance</title>
+  <title>MBA Accounting and Finance – Essential Readings</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.7; }
-    .nav a { margin-right: 12px; }
-    .top { padding: 12px 14px; background:#f6f6f6; border:1px solid #ddd; border-radius:10px; }
-    #readingArea { margin-top: 16px; padding: 16px; border: 1px solid #eee; border-radius: 12px; }
-    #dictPopup{
-      position:absolute; max-width:380px; background:#111; color:#fff;
-      padding:12px; border-radius:12px; box-shadow:0 10px 28px rgba(0,0,0,0.28);
-      z-index:9999; display:none; font-size:14px;
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --primary:#e10098; /* pink-ish like your portal vibe */
+      --primary-2:#7c3aed;
+      --shadow:0 10px 25px rgba(17,24,39,.08);
+      --radius:16px;
     }
-    #dictPopup .word{ font-weight:bold; font-size:15px; margin-bottom:6px; }
-    #dictPopup .meta{ opacity:0.85; font-size:12px; margin-bottom:8px; }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{ color:inherit; text-decoration:none; }
+
+    /* Top header */
+    .topbar{
+      position:sticky; top:0; z-index:5;
+      background:rgba(246,247,251,.92);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width:1200px; margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:99px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow:0 8px 18px rgba(225,0,152,.25);
+    }
+    .crumb{
+      font-size:12px; color:var(--muted);
+      margin-top:2px;
+    }
+    .cta{
+      background:var(--primary);
+      color:#fff;
+      border:0;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 12px 20px rgba(225,0,152,.18);
+    }
+
+    /* Layout */
+    .wrap{ max-width:1200px; margin:0 auto; padding:18px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    /* Sidebar */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .side{
+      padding:14px;
+    }
+    .side h3{
+      margin:4px 0 8px; font-size:14px;
+      color:var(--muted); font-weight:800; letter-spacing:.3px;
+      text-transform:uppercase;
+    }
+    .nav{
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .nav a{
+      padding:10px 12px;
+      border-radius:12px;
+      color:#111827;
+      border:1px solid transparent;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .nav a:hover{ background:#f8fafc; border-color:#eef2ff; }
+    .nav .active{
+      background:#fff0fa;
+      border-color:#ffd6ef;
+      color:#7a0052;
+      font-weight:800;
+    }
+    .pill{
+      font-size:11px;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#f3f4f6;
+      color:#111827;
+      border:1px solid var(--border);
+    }
+
+    /* Main content header */
+    .main{ padding:16px; }
+    .title-row{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:12px; flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .title{
+      font-size:22px; font-weight:900; margin:0;
+    }
+    .sub{
+      color:var(--muted); font-size:13px; margin-top:4px;
+    }
+
+    /* Status widgets */
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:10px;
+      margin:14px 0 10px;
+    }
+    .stat{
+      background:#fafafa;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+    }
+    .stat b{ font-size:18px; }
+    .stat span{ display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+
+    /* Progress */
+    .progress-card{
+      margin:12px 0 14px;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+    }
+    .progress-top{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .bar{
+      height:10px; border-radius:999px;
+      background:#f3f4f6;
+      overflow:hidden;
+      margin-top:10px;
+      border:1px solid var(--border);
+    }
+    .bar > div{
+      height:100%;
+      width:14%;
+      background:linear-gradient(90deg, var(--primary), var(--primary-2));
+      border-radius:999px;
+    }
+    .btn-outline{
+      background:#fff;
+      border:1px solid #f0c7e1;
+      color:#7a0052;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    /* Tabs */
+    .tabs{
+      display:flex; gap:8px; flex-wrap:wrap;
+      border-bottom:1px solid var(--border);
+      padding-bottom:10px;
+      margin-bottom:12px;
+    }
+    .tab{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:#111827;
+      font-weight:800;
+      font-size:13px;
+    }
+    .tab.active{
+      border-color:#ffd6ef;
+      background:#fff0fa;
+      color:#7a0052;
+    }
+
+    /* Reading area */
+    #readingArea{
+      padding:14px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+    }
+    #readingArea h4{ margin:0 0 10px; font-size:16px; }
+    #readingArea p{ margin:0 0 10px; color:#111827; }
+    .note{ color:var(--muted); font-size:12px; margin-top:10px; }
+
+    /* Popup (keep yours, just nicer) */
+    #dictPopup{
+      position:absolute;
+      max-width: 420px;
+      background:#111;
+      color:#fff;
+      padding:12px 12px;
+      border-radius:14px;
+      box-shadow:0 14px 40px rgba(0,0,0,0.32);
+      z-index: 9999;
+      display:none;
+      font-size:14px;
+    }
+    #dictPopup .word{ font-weight:900; font-size:15px; margin-bottom:6px; }
+    #dictPopup .meta{ opacity:.85; font-size:12px; margin-bottom:8px; }
     #dictPopup .closeRow{ display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
-    #closeBtn{ cursor:pointer; border:0; background:transparent; color:#fff; font-size:18px; opacity:0.85; }
+    #closeBtn{ cursor:pointer; border:0; background:transparent; color:#fff; font-size:18px; opacity:.85; }
     #closeBtn:hover{ opacity:1; }
+
+    /* Mobile */
+    @media (max-width: 980px){
+      .grid{ grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <a href="./index.html"><b>MBA Accounting and Finance</b></a>
-    <a href="./other.html">Other Course (same words, no popup)</a>
-  </div>
 
-  <div class="top">
-    <h2 style="margin:0;">MBA Accounting and Finance</h2>
-    <div>Module: <b>Finance for Business Leaders</b> | Lesson: <b>U1C1L1</b></div>
-    <div style="margin-top:6px;">Select a defined term (e.g., <i>Accounting</i>, <i>Financial Transactions</i>, <i>Balance Sheet</i>). Popup will show meaning.</div>
-  </div>
-
-  <div id="readingArea">
-    <p>
-      Accounting starts with recording Financial Transactions through Bookkeeping.
-      Profit or Loss depends on income and expenses, while Assets and Liabilities reflect Financial Position.
-      Financial Statements such as the Balance Sheet, Income Statement, and Cash Flow Statement help evaluate Liquidity,
-      Working Capital, and Financial Performance. Strong Cash Flow Management supports Statutory Compliance and better Budget decisions.
-    </p>
-  </div>
-
-  <div id="dictPopup" role="dialog" aria-live="polite">
-    <div class="closeRow">
-      <div class="word" id="popupWord"></div>
-      <button id="closeBtn" aria-label="Close">×</button>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="brand"><span class="dot"></span> Word Meaning Prototype</div>
+        <div class="crumb">Dashboard / Course Home / Essential Readings</div>
+      </div>
+      <button class="cta" type="button">Connect Personal Tutor</button>
     </div>
-    <div class="meta" id="popupMeta"></div>
-    <div id="popupBody"></div>
-  </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+
+      <!-- Sidebar -->
+      <aside class="card side">
+        <h3>Course Home</h3>
+        <div class="nav">
+          <a class="active" href="./index.html">MBA Accounting &amp; Finance <span class="pill">Active</span></a>
+          <a href="./other.html">Other Course Demo <span class="pill">No Glossary</span></a>
+        </div>
+
+        <h3 style="margin-top:14px;">Chapters</h3>
+        <div class="nav">
+          <a href="./index.html" class="active">Unit 1: Finance Basics <span class="pill">U1</span></a>
+          <a href="./index.html">Unit 2: Reporting <span class="pill">U2</span></a>
+          <a href="./index.html">Unit 3: Ratios <span class="pill">U3</span></a>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <section class="card main">
+        <div class="title-row">
+          <div>
+            <h1 class="title">MBA Accounting and Finance</h1>
+            <div class="sub">Module: <b>Finance for Business Leaders</b> • Lesson: <b>U1C1L1</b> • Essential Readings</div>
+          </div>
+          <button class="btn-outline" type="button">Resume Lesson</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>24</b><span>Viewed</span></div>
+          <div class="stat"><b>4</b><span>Completed</span></div>
+          <div class="stat"><b>24</b><span>Pending</span></div>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-top">
+            <div style="font-weight:900;">Overall Status</div>
+            <div style="color:var(--muted); font-weight:800;">14% Completed</div>
+          </div>
+          <div class="bar"><div></div></div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab">Video Lecture</div>
+          <div class="tab active">Essential Readings</div>
+          <div class="tab">Reference Materials</div>
+          <div class="tab">Additional Resources</div>
+        </div>
+
+        <div id="readingArea">
+          <h4>Glossary-based Reading</h4>
+          <p>
+            Accounting starts with recording Financial Transactions through Bookkeeping.
+            Profit or Loss depends on income and expenses, while Assets and Liabilities reflect Financial Position.
+          </p>
+          <p>
+            Financial Statements such as the Balance Sheet, Income Statement, and Cash Flow Statement help evaluate Liquidity,
+            Working Capital, and Financial Performance. Strong Cash Flow Management supports Statutory Compliance and better Budget decisions.
+          </p>
+          <div class="note">
+            Tip: Select a full term like “Financial Transactions” or “Balance Sheet”. Popup opens only if the term is defined for this course/module/lesson.
+          </div>
+        </div>
+
+        <!-- Popup -->
+        <div id="dictPopup" role="dialog" aria-live="polite">
+          <div class="closeRow">
+            <div class="word" id="popupWord"></div>
+            <button id="closeBtn" aria-label="Close">×</button>
+          </div>
+          <div class="meta" id="popupMeta"></div>
+          <div id="popupBody"></div>
+        </div>
+
+      </section>
+    </div>
+  </main>
 
   <script>
-    // LMS-like context for this page
+    // Keep your context as-is
     window.GLOSSARY_CONTEXT = {
       courseName: "MBA Accounting and Finance",
       moduleName: "Finance for Business Leaders",
